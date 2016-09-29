@@ -1,10 +1,36 @@
+<!--#include file="../inc/access.asp"  -->
+<!-- #include file="inc/functions.asp" -->
+<!-- #include file="../inc/x_to_html/index_to_html.asp" -->
+<%
+page=request.querystring("page")
+act=request.querystring("act")
+keywords=request.querystring("keywords")
+product_id=cint(request.querystring("id"))
 
+act1=Request("act1")
+If act1="save" Then 
+l_id=trim(request.form("l_id"))
+a_title=trim(request.form("title"))
+a_wine=trim(request.form("wine"))
+a_net=trim(request.form("a_net"))
+end if
+     %>
+
+	<%
+Call header()
+
+%>
+<% set rs=server.createobject("adodb.recordset")
+sql="select * from article where id="&product_id&""
+rs.open sql,cn,1,1
+if not rs.eof and not rs.bof then%>
+<form id="form1" name="form1" method="post" action="?act1=save&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">
 	<table cellpadding='3' cellspacing='1' border='0' class='tableBorder' align=center>
 	<tr>
 	  <th class='tableHeaderText' colspan=2 height=25><font size="2">编辑产品</font></th>
 	<tr>
 	<td width="15%" height=23 class='forumRow'><font size="2">标题 (必填) </font> </td>
-	<td class='forumRow'><input name='a_title' type='text' id='a_title' size='70'><font size="2">
+	<td class='forumRow'><input name='a_title' type='text' id='a_title' value="<%=rs("title") %>" size='70'><font size="2">
 	  &nbsp;</font></td>
 	</tr>
 	<tr>
@@ -108,5 +134,11 @@
 		</font>
 	  </div></td></tr>
 	</table>
-	<font size="2">
-</form><br /><br /><br /></font>
+</form>
+<%
+else
+response.write"未找到数据"
+end if%>
+<%
+Call DbconnEnd()
+ %>
