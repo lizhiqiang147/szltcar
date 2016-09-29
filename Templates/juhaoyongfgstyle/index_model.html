@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="content-language" content="zh-cn" />
+<title>$web_title$</title>
+<meta name="keywords" content="$web_keywords$" />
+<meta name="description" content="$web_description$" />
+<link href="/css/$web_theme$/style.css" rel="stylesheet" type="text/css" />
+<link href="/css/$web_theme$/common.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/css/$web_theme$/functions.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/FocusSlide.js"></script>
+<script type="text/javascript" src="/js/ScrollPic.js"></script>
+
+</head>
+
+<body>
+<div id="wrapper">
+
+<!--head start-->
+<div id="head">
+
+<!--top start -->
+<div class="top">
+
+<div class="TopLogo">
+<div class="logo"><a href="/"><img src="/css/$web_theme$/$web_image$" alt="$web_name$"></a></div>
+</div>
+
+<div class="TopInfo">
+<div class="link"><a href="/">首 页</a> | <a href="/Sitemap">网站导航</a> | <a href="/Feedback">留言反馈</a></div>
+<div class="clearfix"></div>
+<div class="tel"><p class="telW">$web_tel_title$</p><p class="telN">$web_tel$</p></div>
+<div class="juhaoyongTopSearchClass">
+	<form method="get" action="$search_FolderName$/index.asp">
+	<span class="SearchBar">
+	<input type="text" name="q" id="search-text" size="15" onBlur="if(this.value=='') this.value='请输入关键词';" onfocus="if(this.value=='请输入关键词') this.value='';" value="请输入关键词" />
+	<input type="submit" id="search-submit" value="搜索" />
+	</span>
+	</form>
+</div>
+</div>
+
+</div>
+<!--top end-->
+
+<!--nav start-->
+<div id="NavLink">
+<div class="NavBG">
+<!--Head Menu Start-->
+$web_TopMenu$
+<!--Head Menu End-->
+</div>
+<div class="clearfix"></div>
+</div>
+<!--nav end-->
+<!--focus start-->
+
+$web_TopIMGAD$
+
+<!--foncus end-->
+<div class="HeightTab clearfix"></div>
+
+</div>
+<!--head end-->
+<!--body start-->
+<div id="body">
+<!--MainBlock start-->
+<div class="MainBlock">
+<!--left start-->
+<div class="right">
+<div class="topic">
+<div class="TopicTitle"><a href="/$WebAboutFolderName$">$WebAboutName$</a></div>
+<div class="TopicMore"> <a  href='/$WebAboutFolderName$'><img src="images/more.png"></a></div>
+</div>
+<div class='img'><a href='/$WebAboutFolderName$' target='_blank'><img src='/css/$WebAboutImage$' width='242' height='100' alt='$WebAboutName$'></a></div><div class='txt ColorLink'><p>
+$WebAboutContent$...<a href='/$WebAboutFolderName$' target='_blank'>详细>></a></p></div>
+<div class=" clearfix"></div>
+
+</div>
+<!--left end-->
+<div class='WidthTab2'></div>
+
+<!--right start-->
+<div class="left">
+<div class="topic">
+<div class="TopicTitle"><a  href='/$WebNewNewsFolderName$'>$WebNewNewsName$</a></div>
+<div class="TopicMore"> <a  href='/$WebNewNewsFolderName$'><img src="images/more.png"></a></div>
+</div>
+<div class='clearfix'></div>
+<table class="MBlockTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+<ul>$WebNewNewsList$
+</ul>
+  </table>
+</div>
+<!--right end-->
+
+<!--right2 start-->
+<div class="right2">
+<div class="topic">
+<div class="TopicTitle"><a  href='$JuhaoyongIndexContactusUrl$'>$JuhaoyongIndexContactusName$</a></div>
+<div class="TopicMore"> <a  href='$JuhaoyongIndexContactusUrl$'><img src="images/more.png"></a></div>
+</div>
+<div class='img'><a href='$JuhaoyongIndexContactusUrl$' target='_blank'><img src='/css/$JuhaoyongIndexContactusImage$' width='242' height='100' alt='$JuhaoyongIndexContactusName$'></a></div><div class="txt ColorLink">
+$web_consult$</div>
+
+<div class=" clearfix"></div>
+
+
+</div>
+<!--right2 end-->
+<div class="clearfix"></div>
+
+</div>
+<!--MainBlock end-->
+
+<div class="HeightTab2 clearfix"></div>
+
+$Block03_LeftItem$
+
+$jhyArticleListHtml$
+
+<!--links start-->
+$web_link$
+<!--links end-->
+
+</div>
+<!--body end-->
+<div class="HeightTab clearfix"></div>
+<!--footer start-->
+<div id="footer">
+<div class="inner">
+$web_BottomHTML$
+$juhaoyong_kefu_html_code_string$
+</div>
+</div>
+<!--footer end -->
+
+
+</div>
+<script type="text/javascript" src="/js/TabShow.js" ></script>
+<script type="text/javascript">
+window.onerror=function(){return true;}
+</script>
+
+<script type="text/javascript" src="/juhaoyong-kfimgs/jquery.js"></script>
+<script type="text/javascript" src="/juhaoyong-kfimgs/kf.js"></script>
+</body>
+</html>
+
+
+
