@@ -82,12 +82,12 @@ end if
 
 end if 
 
- %>
- 	<script charset="utf-8" src="Keditor/kindeditor.js"></script>
-	<script charset="utf-8" src="Keditor/lang/zh_CN.js"></script>
-	<script charset="utf-8" src="Keditor/editor.js"></script>
+%>
+<script charset="utf-8" src="Keditor/kindeditor.js"></script>
+<script charset="utf-8" src="Keditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="Keditor/editor.js"></script>
 
- <!-- 三级联动菜单 开始 -->
+<!-- 三级联动菜单 开始 -->
 <script language="JavaScript">
 <!--
 <%
@@ -156,8 +156,9 @@ function changeselect2(locationid)
     }
 }
 //-->
-</script><!-- 三级联动菜单 结束 -->
-	<%
+</script>
+<!-- 三级联动菜单 结束 -->
+<%
 Call header()
 
 %>
@@ -213,8 +214,8 @@ End Function
 
 
 %>
-  <form id="form1" name="form1" method="post" action="?act=save&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>">
-         <script language='javascript'>
+<form id="form1" name="form1" method="post" action="?act=save&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>">
+    <script language='javascript'>
 function checksignup1() {
 if ( document.form1.cid.value == '' ) {
 window.alert('请选择分类^_^');
@@ -229,22 +230,23 @@ return false;}
 
 
 return true;}
-</script>
-	<table cellpadding='3' cellspacing='1' border='0' class='tableBorder' align=center>
-	<tr>
-	  <th class='tableHeaderText' colspan=2 height=25>添加招聘职位</th>
-	<tr>
-	<td class='forumRowHighLight' height=23>分类<span class="forumRow"> (必选) </span></td>
-    <td class='forumRowHighLight'><%
+    </script>
+    <table cellpadding='3' cellspacing='1' border='0' class='tableBorder' align="center">
+        <tr>
+            <th class='tableHeaderText' colspan="2" height="25">添加价格列表</th>
+        </tr>
+        <tr style="display:none">
+            <td class='forumRowHighLight' height="23">分类<span class="forumRow"> (必选) </span></td>
+            <td class='forumRowHighLight'><%
 Dim count1,rsClass1,sqlClass1
 set rsClass1=server.createobject("adodb.recordset")
 sqlClass1="select id,pid,ppid,name from category where ppid=1 and ClassType=4 order by id" 
 rsClass1.open sqlClass1,cn,1,1
-%>
+            %>
 
-            <select name="cid" id="cid" onChange="changeselect1(this.value)">
+                <select name="cid" id="cid" onchange="changeselect1(this.value)">
 
-              <%
+                    <%
 count1 = 0
 do while not rsClass1.eof
 	if rsClass1("ID")=juhaoyong_cid then
@@ -256,61 +258,41 @@ count1 = count1 + 1
 rsClass1.movenext
 loop
 rsClass1.close
-%>
+                    %>
+                </select>
+                &nbsp;&nbsp;
+            <select name="pid" id="pid" onchange="changeselect2(this.value)">
+                <option value="">选择二级分类</option>
             </select>
-            &nbsp;&nbsp;
-            <select name="pid" id="pid"  onchange="changeselect2(this.value)">
-              <option value="">选择二级分类</option>
-            </select>
-            &nbsp;&nbsp;
+                &nbsp;&nbsp;
             <select name="ppid" id="ppid">
-              <option value="">选择三级分类</option>
+                <option value="">选择三级分类</option>
             </select>&nbsp;</td>
-	</tr>	
-	<tr>
-	<td width="15%" height=23 class='forumRow'>职位名称 (必填) </td>
-	<td class='forumRow'><input name='a_title' type='text' id='a_title' size='70'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRowHighLight'>工作地点</td>
-	<td class='forumRowHighLight'><input name='a_address' type='text' id='a_address' size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRow'>工资待遇</td>
-	<td class='forumRow'><input name='a_person' type='text' id='a_person' size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRowHighLight'>招聘人数</td>
-	<td class='forumRowHighLight'><input name='a_tel' type='text' id='a_tel' size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRow'>性别要求</td>
-	<td class='forumRow'><input name='a_email' type='text' id='a_email' size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRowHighLight'>年龄要求</td>
-	<td class='forumRowHighLight'><input name='a_qq' type='text' id='a_qq' size='40'>
-	  &nbsp;</td>
-	</tr>					
-<tr>
-	  <td class='forumRow' height=11>条件要求 </td>
-	  <td class='forumRow'><textarea name='a_description'  cols="100" rows="4" id="a_description" ></textarea></td>
-	</tr>
-	<tr>
-	  <td class='forumRowHighLight' height=23>职位描述</td>
-	  <td class='forumRowHighLight'><textarea name="a_content" id="a_content" style=" width:100%; height:400px; visibility:hidden;"></textarea></td>
-	</tr>
+        </tr>
+        <tr>
+            <td width="15%" height="23" class='forumRow'>价格名称 (必填) </td>
+            <td class='forumRow'>
+                <input name='a_title' type='text' id='a_title' size='70'>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class='forumRowHighLight' height="23">内容</td>
+            <td class='forumRowHighLight'>
+                <textarea name="a_content" id="a_content" style="width: 100%; height: 400px; visibility: hidden;"></textarea></td>
+        </tr>
 
-	<tr><td height="50" colspan=2  class='forumRow'><div align="center">
-	  <INPUT type=submit value='提交' onClick='javascript:return checksignup1()' name=Submit>
-	  </div></td></tr>
-	</table>
-</form><br /><br /><br />
+        <tr>
+            <td height="50" colspan="2" class='forumRow'>
+                <div align="center">
+                    <input type="submit" value='提交' onclick='javascript:return checksignup1()' name="Submit">
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+<br />
+<br />
+<br />
 <script language="JavaScript">
 juhaoyong_cid_js=<%=juhaoyong_cid%>;
 juhaoyong_pid_js=<%=juhaoyong_pid%>;
@@ -341,4 +323,4 @@ document.form1.ppid.options[0].selected=true;
 </script>
 <%
 Call DbconnEnd()
- %>
+%>

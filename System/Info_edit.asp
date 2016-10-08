@@ -101,11 +101,11 @@ end if
 
 end if 
 %>
- 	<script charset="utf-8" src="Keditor/kindeditor.js"></script>
-	<script charset="utf-8" src="Keditor/lang/zh_CN.js"></script>
-	<script charset="utf-8" src="Keditor/editor.js"></script>
+<script charset="utf-8" src="Keditor/kindeditor.js"></script>
+<script charset="utf-8" src="Keditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="Keditor/editor.js"></script>
 
- <!-- 三级联动菜单 开始 -->
+<!-- 三级联动菜单 开始 -->
 <script language="JavaScript">
 <!--
 <%
@@ -174,8 +174,9 @@ function changeselect2(locationid)
     }
 }
 //-->
-</script><!-- 三级联动菜单 结束 -->
-	<%
+</script>
+<!-- 三级联动菜单 结束 -->
+<%
 Call header()
 
 %>
@@ -189,8 +190,9 @@ juhaoyong_ppid=request.QueryString("juhaoyong_ppid")
 sql="select * from [web_info] where id="&article_id&""
 rs.open(sql),cn,1,1
 if not rs.eof and not rs.bof then
-%>  <form id="form1" name="form1" method="post" action="?act1=save&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">
-         <script language='javascript'>
+%>
+<form id="form1" name="form1" method="post" action="?act1=save&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">
+    <script language='javascript'>
 function checksignup1() {
 if ( document.form1.a_title.value == '' ) {
 window.alert('请输入标题^_^');
@@ -203,35 +205,35 @@ document.form1.cid.focus();
 return false;}
 
 return true;}
-</script>
-	<table cellpadding='3' cellspacing='1' border='0' class='tableBorder' align=center>
-	<tr>
-	  <th class='tableHeaderText' colspan=2 height=25>修改招聘职位</th>
-	<tr>
-	<td class='forumRowHighLight' height=23>分类<span class="forumRow"> (必选) </span></td>
-    <td class='forumRowHighLight'><%
+    </script>
+    <table cellpadding='3' cellspacing='1' border='0' class='tableBorder' align="center">
+        <tr>
+            <th class='tableHeaderText' colspan="2" height="25">修改招聘价格</th>
+            <tr style="display:none">
+                <td class='forumRowHighLight' height="23">分类<span class="forumRow"> (必选) </span></td>
+                <td class='forumRowHighLight'><%
 set rsc1=server.createobject("adodb.recordset")
 sqlClass1="select id,pid,ppid,name from category where ppid=1 and ClassType=4 order by id" 
 rsc1.open sqlClass1,cn,1,1
-%>
-            <select name="cid" id="cid" onChange="changeselect1(this.value)">
-              <% '输出一级分类，并选定当前分类
+                %>
+                    <select name="cid" id="cid" onchange="changeselect1(this.value)">
+                        <% '输出一级分类，并选定当前分类
 count1 = 0
 do while not rsc1.eof
-%><option value="<%=rsc1("ID")%>"  <%if cint(rs("cid"))=rsc1("id") then
+                        %><option value="<%=rsc1("ID")%>" <%if cint(rs("cid"))=rsc1("id") then
 response.write "selected"
 end if%>><%=rsc1("Name")%></option>
-<%count1 = count1 + 1
+                        <%count1 = count1 + 1
 rsc1.movenext
 loop
 rsc1.close
-%>
-            </select>
-            &nbsp;&nbsp;
+                        %>
+                    </select>
+                    &nbsp;&nbsp;
 	
-            <select name="pid" id="pid"  onchange="changeselect2(this.value)">
-              <option value="">选择二级分类</option>
-			 		<%'输出二级分类，并选定当前分类
+            <select name="pid" id="pid" onchange="changeselect2(this.value)">
+                <option value="">选择二级分类</option>
+                <%'输出二级分类，并选定当前分类
 			
 set rsc2=server.createobject("adodb.recordset")
 sqlClass2="select id,pid,ppid,name from category where ppid=2 and ClassType=4 and pid="&cint(rs("cid"))&" order by id" 
@@ -239,24 +241,24 @@ rsc2.open sqlClass2,cn,1,1
 
 count1 = 0
 do while not rsc2.eof
-%><option value="<%=rsc2("ID")%>"  <%
+                %><option value="<%=rsc2("ID")%>" <%
 if rs("pid")<>"" then
 if cint(rs("pid"))=rsc2("id") then
 response.write "selected"
 end if
 end if%>><%=rsc2("Name")%></option>
-<%count1 = count1 + 1
+                <%count1 = count1 + 1
 rsc2.movenext
 loop
 rsc2.close
 
-%>
+                %>
             </select>
-            &nbsp;&nbsp;
+                    &nbsp;&nbsp;
 				
             <select name="ppid" id="ppid">
-              <option value="">选择三级分类</option>
-			  			  		<% '输出三级分类，并选定当前分类
+                <option value="">选择三级分类</option>
+                <% '输出三级分类，并选定当前分类
 			if rs("pid")<>"" then				
 set rsc3=server.createobject("adodb.recordset")
 sqlClass3="select id,pid,ppid,name from category where ppid=3 and ClassType=4 and pid="&cint(rs("pid"))&" order by id" 
@@ -264,72 +266,51 @@ rsc3.open sqlClass3,cn,1,1
 
 count1 = 0
 do while not rsc3.eof
-%><option value="<%=rsc3("ID")%>"  <%
+                %><option value="<%=rsc3("ID")%>" <%
 	if rs("ppid")<>"" then
 if cint(rs("ppid"))=rsc3("id") then
 response.write "selected"
 end if
 end if
 %>><%=rsc3("Name")%></option>
-<%count1 = count1 + 1
+                <%count1 = count1 + 1
 rsc3.movenext
 loop
 rsc3.close
 end if
-%>
+                %>
             </select>&nbsp;</td>
-	</tr>	
-	<tr>
-	<td width="15%" height=23 class='forumRow'>职位名称 (必填) </td>
-	<td class='forumRow'><input name='a_title' type='text' id='a_title' value="<%=rs("title")%>" size='70'>
-	<input name='a_id' type='hidden' id='a_id' value="<%=rs("id")%>" size='70'>
-	  &nbsp;</td>
-	</tr>
+            </tr>
+        <tr>
+            <td width="15%" height="23" class='forumRow'>价格名称 (必填) </td>
+            <td class='forumRow'>
+                <input name='a_title' type='text' id='a_title' value="<%=rs("title")%>" size='70'>
+                <input name='a_id' type='hidden' id='a_id' value="<%=rs("id")%>" size='70'>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class='forumRowHighLight' height="23">内容 </td>
+            <td class='forumRowHighLight'>
+                <textarea name="a_content" id="a_content" style="width: 100%; height: 400px; visibility: hidden;"><%=rs("content")%></textarea></td>
+        </tr>
 
-	<tr>
-	<td width="15%" height=23 class='forumRowHighLight'>工作地点</td>
-	<td class='forumRowHighLight'><input name='a_address' type='text' id='a_address'  value="<%=rs("address")%>" size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRow'>工资待遇</td>
-	<td class='forumRow'><input name='a_person' type='text' id='a_person' value="<%=rs("person")%>"  size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRowHighLight'>招聘人数</td>
-	<td class='forumRowHighLight'><input name='a_tel' type='text' id='a_tel' value="<%=rs("tel")%>"  size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRow'>性别要求</td>
-	<td class='forumRow'><input name='a_email' type='text' id='a_email'  value="<%=rs("email")%>" size='40'>
-	  &nbsp;</td>
-	</tr>
-	<tr>
-	<td width="15%" height=23 class='forumRowHighLight'>年龄要求</td>
-	<td class='forumRowHighLight'><input name='a_qq' type='text' id='a_qq' value="<%=rs("qq")%>" size='40'>
-	  &nbsp;</td>
-	</tr>					
-<tr>
-	  <td class='forumRow' height=11>条件要求 </td>
-	  <td class='forumRow'><textarea name='a_description'  cols="100" rows="4" id="a_description" ><%=rs("description")%></textarea></td>
-	</tr>
-	<tr>
-	  <td class='forumRowHighLight' height=23>职位描述 </td>
-	  <td class='forumRowHighLight'> <textarea name="a_content" id="a_content" style=" width:100%; height:400px; visibility:hidden;"><%=rs("content")%></textarea></td>
-	</tr>
 
-	  
-	<tr><td height="50" colspan=2  class='forumRow'><div align="center">
-	  <INPUT type=submit value='提交' onClick='javascript:return checksignup1()' name=Submit>
-	  </div></td></tr>
-	</table>
-</form><br /><br /><br />
+        <tr>
+            <td height="50" colspan="2" class='forumRow'>
+                <div align="center">
+                    <input type="submit" value='提交' onclick='javascript:return checksignup1()' name="Submit">
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+<br />
+<br />
+<br />
 <%
 else
 response.write"未找到数据"
 end if%>
 <%
 Call DbconnEnd()
- %>
+%>
