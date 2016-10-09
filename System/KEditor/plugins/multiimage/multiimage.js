@@ -529,7 +529,7 @@ SWFUpload.prototype.getFlashHTML = function () {
 	// http://www.kindsoft.net/view.php?bbsid=7&postid=5825&pagenum=1
 	var classid = '';
 	if (KindEditor.IE && KindEditor.V > 8) {
-		classid = ' classid = "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"';
+		classid = ' ';
 	}
 	return ['<object id="', this.movieName, '"' + classid + ' type="application/x-shockwave-flash" data="', this.settings.flash_url, '" width="', this.settings.button_width, '" height="', this.settings.button_height, '" class="swfupload">',
 				'<param name="wmode" value="', this.settings.button_window_mode, '" />',
