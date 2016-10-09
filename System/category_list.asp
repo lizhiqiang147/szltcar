@@ -271,8 +271,8 @@ if not rs3.eof and not rs3.bof then
             <div align="center">
 			<% select case rs3("ClassType")
 			case 1
-			response.write "文章"
-			ListName="Article_list.asp"
+			response.write "酒后代驾"
+			ListName="DrinkDrive_list.asp"
 			case 2
 			response.write "产品"
 			ListName="Product_list.asp"
