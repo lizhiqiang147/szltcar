@@ -65,7 +65,7 @@ set rs=nothing
 '根据分类变化情况生成各级别列表页
 if juhaoyong_a_cid<>a_cid then
 	if a_cid<>"" then call RentalProcess_to_html(a_cid)
-	if juhaoyong_a_cid<>"" then call Recruit_list_to_html(juhaoyong_a_cid)
+	if juhaoyong_a_cid<>"" then call RentalProcess_to_html(juhaoyong_a_cid)
 else
 	if a_cid<>"" then call RentalProcess_to_html(a_cid)
 end if
