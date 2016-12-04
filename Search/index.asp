@@ -69,7 +69,7 @@ s_sql="select [title],[content],[file_path],[time],ArticleType from [article] "&
 <div id="NavLink">
 <div class="NavBG">
 <!--Head Menu Start-->
-<ul id='sddm'><li><a href='/'>首 页</a></li> <li><a href='/Product/'>车型展示</a></li> <li><a href='/DrinkDrive/'>酒后代驾</a></li> <li><a href='/recruit/jobs/'>订车价格</a></li> <li><a href='/RentalProcess/'>租车流程</a></li> <li><a href='/About/'>关于我们</a></li> </ul>
+<ul id='sddm'><li><a href='/'>首 页</a></li> <li><a href='/Product/'>车型展示</a></li> <li><a href='/DrinkDrive/'>酒后代驾</a></li> <li><a href='/Price/'>订车价格</a></li> <li><a href='/RentalProcess/'>租车流程</a></li> <li><a href='/About/'>关于我们</a></li> </ul>
 <!--Head Menu End-->
 </div>
 <div class="clearfix"></div>

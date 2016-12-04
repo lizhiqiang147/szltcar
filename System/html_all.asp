@@ -6,6 +6,7 @@
 <!-- #include file="../inc/x_to_html/Blank_Content_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Recruit_list_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/DrinkDrive_to_html.asp" -->
+<!-- #include file="../inc/x_to_html/RentalProcess_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Case_List_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Search_index_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/SiteMap_index_to_html.asp" -->
@@ -49,10 +50,12 @@ if rs_create("ClassType")=6 then
 call DrinkDrive_to_html(ClassID)
 end if
 
-'单页
-if rs_create("ClassType")=5  then
-call Blank_Content_to_html(ClassID)
+'租车流程
+if rs_create("ClassType")=7 then
+call RentalProcess_to_html(ClassID)
 end if
+
+
 
 rs_create.movenext
 loop

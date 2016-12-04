@@ -118,7 +118,7 @@ End Function
                     </tr>
                     <tr>
                         <td height="30" valign="top" class="TipWords">
-                            <p>1、文章列表显示您所添加的所有价格，标示“未审核”的文章将不会在网站中显示。</p>
+                            <p>1、文章列表显示您所添加的所有文章，标示“未审核”的文章将不会在网站中显示。</p>
                             <p>2、删除文章将会同步删除数据库中的记录和文章的具体地址请慎重。</p>
                         </td>
                     </tr>
@@ -132,7 +132,7 @@ End Function
                     </tr>
 
                 </table>
-                <form name="form2" method="post" action="info_Del.asp?action=AllDel&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">
+                <form name="form2" method="post" action="DrinkDrive_Del.asp?action=AllDel&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">
                     <table width="95%" border="0" align="center" cellpadding="0" cellspacing="2">
                         <tr>
                             <td width="2%" height="30" class="TitleHighlight">&nbsp;</td>
@@ -181,13 +181,13 @@ end if%>
                             </td>
                             <td class='<%=class_style%>'>&nbsp;<a href="DrinkDrive_edit.asp?id=<%=rs("id")%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>"><%=left(rs("title"),16)%></a></td>
                             <td class='<%=class_style%>'>
-                                <div align="center"><a href="info_view_yes.asp?id=<%=rs("id")%>&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>"><%if rs("view_yes")=1 then%>已审核<%else%><span style="color: #FF0000">未审核</span><% end if%></a></div>
+                                <div align="center"><a href="DrinkDrive_view_yes.asp?id=<%=rs("id")%>&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>"><%if rs("view_yes")=1 then%>已审核<%else%><span style="color: #FF0000">未审核</span><% end if%></a></div>
                             </td>
                             <td class='<%=class_style%>'>
                                 <div align="center"><%=rs("time")%></div>
                             </td>
                             <td class='<%=class_style%>'>
-                                <div align="center"><a href="DrinkDrive_edit.asp?id=<%=rs("id")%>&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">修改</a> | <a href="javascript:if(ask('警告：删除后将不可恢复，确定要删除吗？')) location.href='info_del.asp?id=<%=rs("id")%>&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>';">删除</a>            </div>
+                                <div align="center"><a href="DrinkDrive_edit.asp?id=<%=rs("id")%>&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">修改</a> | <a href="javascript:if(ask('警告：删除后将不可恢复，确定要删除吗？')) location.href='DrinkDrive_del.asp?id=<%=rs("id")%>&juhaoyong_cid=<%=juhaoyong_cid%>&juhaoyong_pid=<%=juhaoyong_pid%>&juhaoyong_ppid=<%=juhaoyong_ppid%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>';">删除</a>            </div>
                             </td>
                         </tr>
                         <%

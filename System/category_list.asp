@@ -37,11 +37,7 @@ function ask(msg) {
 <!--
 function class_show(meval)
 {
-  var left_n=eval(meval);
-  if (left_n.style.display=="none")
-  { eval(meval+".style.display='';"); }
-  else
-  { eval(meval+".style.display='none';"); }
+
 }
 -->
 </SCRIPT>
@@ -98,18 +94,17 @@ function class_show(meval)
       </table>
 	    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="2" class="contenttable">
           <tr>
-            <td width="8%" height="30" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">开合</div></td>
+          <!--  <td width="8%" height="30" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">开合</div></td>-->
 			<td width="5%" height="30" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目ID</div></td>
             <td width="13%" height="30" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目名称</div></td>
 			<td width="12%" height="30" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">文件夹名称</div></td>
             <td width="7%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目排序</div></td>
             <td width="7%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目类别</div></td>
 			<td width="7%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目级别</div></td>
-            <td width="8%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">添加下级栏目</div></td>
-			<td width="8%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目设置</div></td>
-			<td width="9%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">推荐为首页栏目</div></td>
+  
+			<!--<td width="9%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">推荐为首页栏目</div></td>-->
 			<td width="9%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目下内容管理</div></td>
-			<td width="7%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目删除</div></td>
+			<!--<td width="7%" class="TitleHighlight"><div align="center" style="font-weight: bold;color:#ffffff">栏目删除</div></td>-->
 			
           </tr>
 		  <%'输出一级栏目
@@ -125,7 +120,7 @@ rs.move(rsno)
 for p_i=1 to loopno
 		  %>
           <tr >
-            <td height="30" class="TitleHighlight2"  onClick="javascript:class_show('class_<%=rs("id")%>');" style=" cursor:pointer;"><div align="center"><img src="images/tree_folder1.gif">点击开合</div></td>
+   <!--         <td height="30" class="TitleHighlight2"  onClick="javascript:class_show('class_<%=rs("id")%>');" style=" cursor:pointer;"><div align="center"><img src="images/tree_folder1.gif">点击开合</div></td>-->
 			<td class="TitleHighlight2" onClick="javascript:class_show('class_<%=rs("id")%>');" style=" cursor:pointer;"><%=rs("id")%></td>
             <td class="TitleHighlight2" onClick="javascript:class_show('class_<%=rs("id")%>');" style=" cursor:pointer;"><a href="<%=MainClass_FolderName&"/"&rs("folder")%>" target="_blank"><%=rs("name")%></a></td>
             <td class="TitleHighlight2" onClick="javascript:class_show('class_<%=rs("id")%>');" style=" cursor:pointer;"><%=rs("folder")%></td>
@@ -141,27 +136,23 @@ for p_i=1 to loopno
 			response.write "产品"
 			ListName="Product_list.asp"
 			case 4
-			response.write "招聘"
+			response.write "价格"
 			ListName="Info_list.asp"			
 			case 5
 			response.write "单页"
 			ListName="#"
             case 6
 			response.write "酒后代驾"
-			ListName="DrinkDrive_list.asp"						
+			ListName="DrinkDrive_list.asp"	
+            case 7
+			response.write "租车流程"
+			ListName="RentalProcess_list.asp"						
 			end select%>
 			</div></td>
 			<td class="TitleHighlight2" align="center">一级栏目</td>
-            <td class="TitleHighlight2" align="center">
+    
 			
-            <a href="category_add.asp?pid_name=<%=rs("name")%>&pid=<%=rs("id")%>&ppid=2&juhaoyongClassType=<%=rs("ClassType")%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">添加二级栏目</a>
-			
-			</td>
-			<td class="TitleHighlight2" align="center">
-			<a href="category_edit.asp?id=<%=rs("id")%>&ppid=1&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>">栏目设置</a>
-			</td>
-			
-			<td width="9%" class="TitleHighlight2" align="center">---</td>
+			<!--<td width="9%" class="TitleHighlight2" align="center">---</td>-->
 			
 			<td class="TitleHighlight2" align="center">
 			<%if rs("ClassType")=5 then%>
@@ -170,168 +161,14 @@ for p_i=1 to loopno
 			<a href="<%=ListName%>?cid=<%=rs("id")%>&act=search"><font color="#00ffff">栏目下内容管理</font></a>
 			<%end if%>
 			</td>
-			<td class="TitleHighlight2" align="center">
+		<!--	<td class="TitleHighlight2" align="center">
 			<a href="javascript:if(ask('警告：删除后将不可恢复，确定要删除吗？')) location.href='category_del.asp?id=<%=rs("id")%>&page=<%=page%>&act=<%=act%>&keywords=<%=keywords%>';">删除栏目</a>
-			</td>
+			</td>-->
           </tr>
 		    <tr id="class_<%=rs("id")%>" style="DISPLAY: none">
             <td height="35"  colspan="12">
 			
-			<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
-					  <%'输出二级栏目
-		  set rs2=server.createobject("adodb.recordset")
-sql="select id,pid,ppid,name,folder,index_push,ClassType,[order] from category where ppid=2 and pid="&rs("id")&" order by [order],time"
-rs2.open(sql),cn,1,1
-if not rs2.eof and not rs2.bof then
-		  do while not rs2.eof
-		  %>
-			<tr>
-			<%if rs2("ClassType")=2 then%>
-			<td width="8%" height="27" class="TitleHighlight3"  onClick="javascript:class_show('class_<%=rs2("id")%>');" style=" cursor:pointer;"><div align="center"><img src="images/tree_folder1.gif">点击开合</div></td>
-			<%else%>
-			<td width="8%" height="27" class="TitleHighlight3"> </td>
-			<%end if%>
-			<td width="5%" class="TitleHighlight3"  onClick="javascript:class_show('class_<%=rs2("id")%>');"  style=" cursor:pointer;"><%=rs2("id")%></td>
-            <td width="13%" class="TitleHighlight3"  onClick="javascript:class_show('class_<%=rs2("id")%>');"  style=" cursor:pointer;"><a href="<%=MainClass_FolderName&"/"&rs("folder")&"/"&rs2("folder")%>" target="_blank"><%=rs2("name")%></a></td>
-            <td width="12%" class="TitleHighlight3"  onClick="javascript:class_show('class_<%=rs2("id")%>');"  style=" cursor:pointer;"><%=rs2("folder")%></td>
-			<td width="7%" class="TitleHighlight3"  onClick="javascript:class_show('class_<%=rs2("id")%>');" ><div align="center"><%=rs2("order")%></div></td>
-            <td width="7%" class="TitleHighlight3"  >
-              <div align="center">
-			<% select case rs2("ClassType")
-			case 1
-			response.write "文章"
-			ListName="Article_list.asp"
-			case 2
-			response.write "产品"
-			ListName="Product_list.asp"
-			case 4
-			response.write "招聘"
-			ListName="Info_list.asp"				
-			case 5
-			response.write "单页"
-			ListName="#"
-            case 6
-			response.write "酒后代驾"
-			ListName="DrinkDrive_list.asp"							
-			end select%>
-			</div></td>
-			<td width="7%" class="TitleHighlight3" align="center">二级栏目</td>
-            <td width="8%" class="TitleHighlight3" align="center">
-			
-              <%if rs2("ClassType")=2 then%>
-			  <a href="category_add.asp?pid_name=<%=rs("name")%>&pid_name2=<%=rs2("name")%>&pid=<%=rs2("id")%>&ppid=3&juhaoyongClassType=<%=rs2("ClassType")%>">添加三级栏目</a>
-			  <%else%>
-			  ---
-			  <%end if%>
-			  
-			  </td>
-			  <td width="8%" class="TitleHighlight3" align="center">
-			  <a href="category_edit.asp?id=<%=rs2("id")%>&pid_name=<%=rs("name")%>&ppid=2">栏目设置</a>
-			  </td>
-			  
-			  <td width="9%" class="TitleHighlight3" align="center">
-			  <%if rs2("ClassType")=1 then%>
-				  <%if rs2("index_push")=1 then%>
-				  <font color="#ffffff">[已推荐]</font> <a href="category_index_push.asp?id=<%=rs2("id")%>"><font color="#ffff00">取消</font></a>
-				  <%else%>
-				  <font color="#000000">[未推荐]</font> <a href="category_index_push.asp?id=<%=rs2("id")%>"><font color="#ffff00">推荐</font></a>
-				  <%end if%>
-			  <%else%>
-			  ---
-			  <%end if%>
-			  </td>
-			  
-			  <td width="9%" class="TitleHighlight3" align="center">
-			  <%if rs2("ClassType")=5 then%>
-			  ---
-			  <%else%>
-			  <a href="<%=ListName%>?cid=<%=rs("id")%>&pid=<%=rs2("id")%>&act=search"><font color="#00ffff">栏目下内容管理</font></a>
-			  <%end if%>
-			  </td>
-			  <td width="7%" class="TitleHighlight3" align="center">
-			  <%if rs2("folder")="Contactus" then%>
-			  系统保留栏目
-			  <%else%>
-			  <a href="javascript:if(ask('警告：删除后将不可恢复，确定要删除吗？')) location.href='category_del.asp?id=<%=rs2("id")%>';">删除栏目</a>
-			  <%end if%>
-			  </td>
-			  </tr>
-			  
-			     <tr id="class_<%=rs2("id")%>" style="DISPLAY: none">
-            <td height="35"  colspan="12">
-			
-			<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
-					  <%'输出三级栏目
-		  set rs3=server.createobject("adodb.recordset")
-sql="select id,pid,ppid,name,folder,ClassType,[order] from category where ppid=3 and pid="&rs2("id")&" order by [order],time"
-rs3.open(sql),cn,1,1
-if not rs3.eof and not rs3.bof then
-		  do while not rs3.eof
-		  %>
-			<tr><td width="8%" height="23" class='TitleHighlight4'></td>
-			<td width="5%" class='TitleHighlight4'><%=rs3("id")%></td>
-            <td width="13%" class='TitleHighlight4'><a href="<%=MainClass_FolderName&"/"&rs("folder")&"/"&rs2("folder")&"/"&rs3("folder")%>" target="_blank"><%=rs3("name")%></a></td>
-            <td width="12%" class='TitleHighlight4'><%=rs3("folder")%></td>
-			<td width="7%" class='TitleHighlight4'><div align="center"><%=rs3("order")%></div></td>
-            <td width="7%" class='TitleHighlight4'>
-            <div align="center">
-			<% select case rs3("ClassType")
-			case 6
-			response.write "酒后代驾"
-			ListName="DrinkDrive_list.asp"
-			case 2
-			response.write "产品"
-			ListName="Product_list.asp"
-			case 4
-			response.write "招聘"
-			ListName="Info_list.asp"				
-			case 5
-			response.write "单页"
-			ListName="#"						
-			end select%>
-			</div></td>
-			<td width="7%" class='TitleHighlight4' align="center">三级栏目</td>
-            <td width="8%" class='TitleHighlight4' align="center">
-			
-              ---
-			  
-			  </td>
-			  <td width="8%" class='TitleHighlight4' align="center">
-			  <a href="category_edit.asp?id=<%=rs3("id")%>&pid_name=<%=rs("name")%>&pid_name2=<%=rs2("name")%>&ppid=3">栏目设置</a>
-			  </td>
-			  
-			  <td width="9%" class="TitleHighlight4" align="center">---</td>
-			  
-			  <td width="9%" class='TitleHighlight4' align="center">
-			  <%if rs3("ClassType")=5 then%>
-			  ---
-			  <%else%>
-			  <a href="<%=ListName%>?cid=<%=rs("id")%>&pid=<%=rs2("id")%>&ppid=<%=rs3("id")%>&act=search"><font color="#00ffff">栏目下内容管理</font></a>
-			  <%end if%>
-			  </td>
-			  <td width="7%" class='TitleHighlight4' align="center">
-			  <a href="javascript:if(ask('警告：删除后将不可恢复，确定要删除吗？')) location.href='category_del.asp?id=<%=rs3("id")%>';">删除栏目</a>
-			  </td>			  
-			  </tr>
-					  <%
-		  rs3.movenext
-		  loop 
-else
-response.write "<div align='center'><span style='color: #FF0000'>无下级栏目！</span></div>"
-end if 
-		  rs3.close
-		  set rs3=nothing
-		  %> </table> </td>
-          </tr>
-					  <%
-		  rs2.movenext
-		  loop 
-else
-response.write "<div align='center'><span style='color: #FF0000'>无下级栏目！</span></div>"
-end if 
-		  rs2.close
-		  set rs2=nothing
-		  %> </table> </td>
+			 </td>
           </tr>
 		  		  <%
 		  rs.movenext

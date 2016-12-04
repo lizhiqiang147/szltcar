@@ -208,7 +208,7 @@ return true;}
     </script>
     <table cellpadding='3' cellspacing='1' border='0' class='tableBorder' align="center">
         <tr>
-            <th class='tableHeaderText' colspan="2" height="25">修改招聘价格</th>
+            <th class='tableHeaderText' colspan="2" height="25">修改订车价格</th>
             <tr style="display:none">
                 <td class='forumRowHighLight' height="23">分类<span class="forumRow"> (必选) </span></td>
                 <td class='forumRowHighLight'><%
