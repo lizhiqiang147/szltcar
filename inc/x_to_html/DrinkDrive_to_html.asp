@@ -5,7 +5,7 @@
 <%juhaoyong_kefu_html_code_string=juhaoyongKefuHtmlCode()%>
 
 <%'容错处理
-function test_DrinkDrive_to_html(ClassID)
+function DrinkDrive_to_html(ClassID)
 On Error Resume Next
 %>
 <%
@@ -55,7 +55,7 @@ end if
 rs_1.close
 
 '招聘列表模板类型获取
-sql="select FileName,FolderName from web_Models_type where [id]=32"
+sql="select FileName,FolderName from web_Models_type where [id]=49"
 rs_1.open(sql),cn,1,1
 if not rs_1.eof then
 Model_FileName=rs_1("FileName")
@@ -321,7 +321,7 @@ do while not rs.eof and howmanyrecs<rs.pagesize
 %><%
 list_block=list_block&"<table width='100%' border='0' cellpadding='0' cellspacing='0' >"
 'list_block=list_block&"<tr><td width='14%' align='center' class='Rtitle'></td>"
-list_block=list_block&"<td colspan='2' align='left' class='Rtitle'><strong>&nbsp;"&rs("title")&"</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>["&rs("time")&"]</span></td></tr>"
+'list_block=list_block&"<td colspan='2' align='left' class='Rtitle'><strong>&nbsp;"&rs("title")&"</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>["&rs("time")&"]</span></td></tr>"
 
 list_block=list_block&"<td align='left' bgcolor='#FCFCFC'><p>"&rs("content")&"</p></td></tr>"
 list_block=list_block&"</table><br>"

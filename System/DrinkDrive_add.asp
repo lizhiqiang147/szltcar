@@ -54,16 +54,16 @@ set rs=nothing
 %>
 <% 
 ClassID=a_cid
-call Recruit_list_to_html(ClassID)
+call DrinkDrive_to_html(ClassID)
 
 juhaoyongClassPid=a_pid
 if trim(juhaoyongClassPid)<>"" then
-call Recruit_list_to_html(juhaoyongClassPid)
+call DrinkDrive_to_html(juhaoyongClassPid)
 end if
 
 juhaoyongClassPpid=a_ppid
 if trim(juhaoyongClassPpid)<>"" then
-call Recruit_list_to_html(juhaoyongClassPpid)
+call DrinkDrive_to_html(juhaoyongClassPpid)
 end if
 
 %>
@@ -73,11 +73,11 @@ juhaoyong_pid=request.QueryString("juhaoyong_pid")
 juhaoyong_ppid=request.QueryString("juhaoyong_ppid")
 
 if juhaoyong_ppid>0 then
-response.Write "<script language='javascript'>alert('添加成功！');location.href='info_list.asp?ppid="&juhaoyong_ppid&"&act=search';</script>"
+response.Write "<script language='javascript'>alert('添加成功！');location.href='DrinkDrive_list.asp?ppid="&juhaoyong_ppid&"&act=search';</script>"
 elseif juhaoyong_pid>0 then
-response.Write "<script language='javascript'>alert('添加成功！');location.href='info_list.asp?pid="&juhaoyong_pid&"&act=search';</script>"
+response.Write "<script language='javascript'>alert('添加成功！');location.href='DrinkDrive_list.asp?pid="&juhaoyong_pid&"&act=search';</script>"
 elseif juhaoyong_cid>0 then
-response.Write "<script language='javascript'>alert('添加成功！');location.href='info_list.asp?cid="&juhaoyong_cid&"&act=search';</script>"
+response.Write "<script language='javascript'>alert('添加成功！');location.href='DrinkDrive_list.asp?cid="&juhaoyong_cid&"&act=search';</script>"
 end if
 
 end if 
@@ -94,7 +94,7 @@ end if
 '二级数据保存到数组
 Dim count2,rsClass2,sqlClass2
 set rsClass2=server.createobject("adodb.recordset")
-sqlClass2="select id,pid,ppid,name from [category] where ppid=2 and ClassType=4 order by id " 
+sqlClass2="select id,pid,ppid,name from [category] where ppid=2 and ClassType=6 order by id " 
 rsClass2.open sqlClass2,cn,1,1
 %>
 var subval2 = new Array();
@@ -115,7 +115,7 @@ rsClass2.close
 '三级数据保存到数组
 Dim count3,rsClass3,sqlClass3
 set rsClass3=server.createobject("adodb.recordset")
-sqlClass3="select id,pid,ppid,name from [category] where ppid=3  and ClassType=4 order by id" 
+sqlClass3="select id,pid,ppid,name from [category] where ppid=3  and ClassType=6 order by id" 
 rsClass3.open sqlClass3,cn,1,1
 %>
 var subval3 = new Array();
@@ -240,7 +240,7 @@ return true;}
             <td class='forumRowHighLight'><%
 Dim count1,rsClass1,sqlClass1
 set rsClass1=server.createobject("adodb.recordset")
-sqlClass1="select id,pid,ppid,name from category where ppid=1 and ClassType=4 order by id" 
+sqlClass1="select id,pid,ppid,name from category where ppid=1 and ClassType=6 order by id" 
 rsClass1.open sqlClass1,cn,1,1
             %>
 
@@ -270,7 +270,7 @@ rsClass1.close
             </select>&nbsp;</td>
         </tr>
         <tr>
-            <td width="15%" height="23" class='forumRow'>价格名称 (必填) </td>
+            <td width="15%" height="23" class='forumRow'>文章名称 (必填) </td>
             <td class='forumRow'>
                 <input name='a_title' type='text' id='a_title' size='70'>
                 &nbsp;</td>

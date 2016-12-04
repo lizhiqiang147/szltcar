@@ -5,6 +5,7 @@
 <!-- #include file="../inc/x_to_html/post_index_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Blank_Content_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Recruit_list_to_html.asp" -->
+<!-- #include file="../inc/x_to_html/DrinkDrive_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Case_List_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/Search_index_to_html.asp" -->
 <!-- #include file="../inc/x_to_html/SiteMap_index_to_html.asp" -->
@@ -41,6 +42,11 @@ end if
 'ÕÐÆ¸
 if rs_create("ClassType")=4 then
 call Recruit_list_to_html(ClassID)
+end if
+
+'¾Æºó´ú¼Ý
+if rs_create("ClassType")=6 then
+call DrinkDrive_to_html(ClassID)
 end if
 
 'µ¥Ò³

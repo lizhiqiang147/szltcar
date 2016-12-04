@@ -16,7 +16,7 @@
     </tr> 
     <tr>
       <td width="18%" class="left_title_1"><span class="left-title">程序名称</span></td>
-      <td width="82%">&nbsp;科美智能企业网站管理系统标准版</td>
+      <td width="82%">&nbsp;网站管理系统标准版</td>
     </tr>
   </table>
 </div>

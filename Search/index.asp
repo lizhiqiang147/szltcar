@@ -51,7 +51,7 @@ s_sql="select [title],[content],[file_path],[time],ArticleType from [article] "&
 <div class="TopInfo">
 <div class="link"><a href="/">首 页</a> | <a href="/Sitemap">网站导航</a> | <a href="/Feedback">留言反馈</a></div>
 <div class="clearfix"></div>
-<div class="tel"><p class="telW">热线电话</p><p class="telN">18351104777</p></div>
+<div class="tel"><p class="telW">热线电话</p><p class="telN">13358000050</p></div>
 <div class="juhaoyongTopSearchClass">
 	<form method="get" action="/Search/index.asp">
 	<span class="SearchBar">
@@ -94,7 +94,7 @@ s_sql="select [title],[content],[file_path],[time],ArticleType from [article] "&
 <div class="topic">联系我们</div>
 <div class="txt ColorLink">
 <p>地址：苏州市阊门内下塘116号</p>
-<p>手机：18351104777</p>
+<p>手机：13358000050（骆经理）</p>
 <p>QQ：1429089965</p></div>
 </div>
 <div class="HeightTab clearfix"></div>
@@ -226,7 +226,7 @@ end if%>
 <div class='BottomNav'><a href=''></a></div><div class='HeightTab'></div><p>Copyright 2016-2017 
 <a href='http://www.szltcar.com' target='_blank'>www.szltcar.com</a>
 苏州力拓汽车服务有限公司 版权所有 All Rights Reserved </p>
-<p>公司地址：苏州市阊门内下塘116号 联系电话：18351104777  QQ：1429089965</p>
+<p>公司地址：苏州市阊门内下塘116号 联系电话：13358000050  QQ：1429089965</p>
 <DIV id=juhaoyong_xuanfukefu><DIV id=juhaoyong_xuanfukefuBut onmouseover='ShowJhyXuanfu()'><table class=juhaoyong_xuanfukefuBut_table border=0 cellspacing=0 cellpadding=0><tr><td> </td></tr></table></DIV><DIV id=juhaoyong_xuanfukefuContent><table width=143 border=0 cellspacing=0 cellpadding=0><tr><td class=juhaoyong_xuanfukefuContent01 valign=top> </td></tr><tr><td class=juhaoyong_xuanfukefuContent02 align=center>	<table border=0 cellspacing=0 cellpadding=0 align=center>    <tr><td class=jhykefu_box1>QQ客服</td></tr>    <tr><td class=jhykefu_box2><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1429089965&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:800010000:41 &r=0.16260569812690305" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td></tr>	</table></td></tr>	<tr><td class=juhaoyong_xuanfukefuContent03> </td></tr></table></DIV></DIV>
 </div>
 </div>

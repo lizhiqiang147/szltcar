@@ -145,7 +145,10 @@ for p_i=1 to loopno
 			ListName="Info_list.asp"			
 			case 5
 			response.write "单页"
-			ListName="#"						
+			ListName="#"
+            case 6
+			response.write "酒后代驾"
+			ListName="DrinkDrive_list.asp"						
 			end select%>
 			</div></td>
 			<td class="TitleHighlight2" align="center">一级栏目</td>
@@ -206,7 +209,10 @@ if not rs2.eof and not rs2.bof then
 			ListName="Info_list.asp"				
 			case 5
 			response.write "单页"
-			ListName="#"						
+			ListName="#"
+            case 6
+			response.write "酒后代驾"
+			ListName="DrinkDrive_list.asp"							
 			end select%>
 			</div></td>
 			<td width="7%" class="TitleHighlight3" align="center">二级栏目</td>
@@ -270,7 +276,7 @@ if not rs3.eof and not rs3.bof then
             <td width="7%" class='TitleHighlight4'>
             <div align="center">
 			<% select case rs3("ClassType")
-			case 1
+			case 6
 			response.write "酒后代驾"
 			ListName="DrinkDrive_list.asp"
 			case 2

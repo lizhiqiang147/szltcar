@@ -213,7 +213,7 @@ return true;}
                 <td class='forumRowHighLight' height="23">分类<span class="forumRow"> (必选) </span></td>
                 <td class='forumRowHighLight'><%
 set rsc1=server.createobject("adodb.recordset")
-sqlClass1="select id,pid,ppid,name from category where ppid=1 and ClassType=4 order by id" 
+sqlClass1="select id,pid,ppid,name from category where ppid=1 and ClassType=6 order by id" 
 rsc1.open sqlClass1,cn,1,1
                 %>
                     <select name="cid" id="cid" onchange="changeselect1(this.value)">
@@ -236,7 +236,7 @@ rsc1.close
                 <%'输出二级分类，并选定当前分类
 			
 set rsc2=server.createobject("adodb.recordset")
-sqlClass2="select id,pid,ppid,name from category where ppid=2 and ClassType=4 and pid="&cint(rs("cid"))&" order by id" 
+sqlClass2="select id,pid,ppid,name from category where ppid=2 and ClassType=6 and pid="&cint(rs("cid"))&" order by id" 
 rsc2.open sqlClass2,cn,1,1
 
 count1 = 0
@@ -261,7 +261,7 @@ rsc2.close
                 <% '输出三级分类，并选定当前分类
 			if rs("pid")<>"" then				
 set rsc3=server.createobject("adodb.recordset")
-sqlClass3="select id,pid,ppid,name from category where ppid=3 and ClassType=4 and pid="&cint(rs("pid"))&" order by id" 
+sqlClass3="select id,pid,ppid,name from category where ppid=3 and ClassType=6 and pid="&cint(rs("pid"))&" order by id" 
 rsc3.open sqlClass3,cn,1,1
 
 count1 = 0
