@@ -68,16 +68,14 @@ function class_show(meval)
 	
 	<tr><td height="400" valign="top"  class='forumRow'><br>
 	    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-		  <tr><td width="100%" align="right" class="jhyBuildHtmlAlertTxt"><a href="html_items.asp"><strong>增加修改删除栏目后，请点击这里，去生成栏目静态>>></strong></a></td></tr>
+		 <!-- <tr><td width="100%" align="right" class="jhyBuildHtmlAlertTxt"><a href="html_items.asp"><strong>增加修改删除栏目后，请点击这里，去生成栏目静态>>></strong></a></td></tr>-->
           <tr>
             <td height="25" class='TipTitle'>&nbsp;√ 操作提示</td>
           </tr>
           <tr>
             <td height="30" valign="top" class="TipWords">
-              <p>1、点击栏目后面的<font color="#03d8d8" size="+2"><strong>“栏目下内容管理”</strong></font>打开后，可以<font color="#000000" size="+2"><strong>“添加”</strong></font>、删除、修改相应的的内容；<b>“单页”</b>类型栏目，点击<b>“栏目设置”</b>修改内容。</p>
-			  <p>2、栏目操作：<font color="#009900"><strong>（1）点击“栏目名称旁边的色块”</strong></font>或前面的“<img src="images/tree_folder1.gif"> ”，即可展开下级栏目。&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0099ff"><strong>（2）只有“文章”类型的二级栏目，才可以“推荐为首页栏目”</strong></font></p>
-
-              <p>4、<font color="#FF0000">特别提醒：</font>增加、修改、删除“栏目”后，请到“导航管理”中修改对应的导航，并重新生成所有静态，然后到前台<font color="#339900">&nbsp;<b>按F5刷新</b>&nbsp;</font>查看效果。</p>
+              <p>1、点击栏目后面的<font color="#03d8d8" size="+2"><strong>“栏目下内容管理”</strong></font>打开后，可以<font color="#000000" size="+2"><strong>“添加”</strong></font>、删除、修改相应的的内容；
+			  
 			  </td>
           </tr>
           <tr>
@@ -86,7 +84,7 @@ function class_show(meval)
         </table>
 	    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
           <tr>
-            <td height="25" class='forumRowHighLight'>&nbsp;| <a href="category_add.asp?ppid=1&juhaoyongClassType=0">添加新的一级栏目</a></td>
+           <!-- <td height="25" class='forumRowHighLight'>&nbsp;| <a href="category_add.asp?ppid=1&juhaoyongClassType=0">添加新的一级栏目</a></td>-->
           </tr>
           <tr>
             <td height="10"></td>

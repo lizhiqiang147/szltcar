@@ -110,37 +110,6 @@ Call header()
 
 if request.querystring("action")="create" then
 
-'生成栏目
-if request.form("Class_List")=1 then
-
-cid=request.form("cid")
-pid=request.form("pid")
-ppid=request.form("ppid")
-
-if cid<>"" or pid<>"" or ppid<>""  then
-
-if ppid<>"" then
-n_sql=" id="&ppid&" "
-end if
-
-if pid<>"" and ppid="" then
-n_sql=" id="&pid&" "
-end if
-
-if cid<>"" and pid="" and ppid="" then
-n_sql=" id="&cid&" "
-end if
-sql="select [id],ppid,ClassType,Html_Yes,index_push from [category] where "&n_sql&"    order by [time] desc"
-else
-sql="select [id],ppid,ClassType,Html_Yes,index_push from [category]  order by [time] desc"
-end if
-
-
-set rs_create=server.createobject("adodb.recordset")
-rs_create.open(sql),cn,1,1
-if not rs_create.eof then
-do while not rs_create.eof
-ClassID=rs_create("id")
 
 '文章
 if rs_create("ClassType")=1 then

@@ -86,7 +86,7 @@ function showInnerText(Id){
     <li id="man_nav_2" onclick="list_sub_nav(id,'系统设置')"  class="bg_image">系统设置</li>
 <%End If %>
 
-	<li id="man_nav_3" onclick="list_sub_nav(id,'导航管理')"  class="bg_image">导航管理</li>
+	<!--<li id="man_nav_3" onclick="list_sub_nav(id,'导航管理')"  class="bg_image">导航管理</li>-->
     <li id="man_nav_4" onclick="list_sub_nav(id,'内容管理')"  class="bg_image">内容管理</li>
     <li id="man_nav_6" onclick="list_sub_nav(id,'静态管理')"  class="bg_image">静态管理</li>
     </ul>

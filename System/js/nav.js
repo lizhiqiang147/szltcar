@@ -189,11 +189,11 @@ outlookbar.additem('底部导航',t,'menuBottom_list.asp')
 t=outlookbar.addtitle('栏目和内容','内容管理',1)
 outlookbar.additem('栏目和内容管理',t,'category_list.asp')
 
-t=outlookbar.addtitle('订单管理','内容管理',1)
-outlookbar.additem('订单管理',t,'order_list.asp')
+//t=outlookbar.addtitle('订单管理','内容管理',1)
+//outlookbar.additem('订单管理',t,'order_list.asp')
 
-t=outlookbar.addtitle('留言管理','内容管理',1)
-outlookbar.additem('留言管理',t,'message_list.asp')
+//t=outlookbar.addtitle('留言管理','内容管理',1)
+//outlookbar.additem('留言管理',t,'message_list.asp')
 
 
 
@@ -205,11 +205,5 @@ outlookbar.additem('生成所有',t,'html_all_alert.asp')
 
 t=outlookbar.addtitle('生成首页','静态管理',1)
 outlookbar.additem('生成首页',t,'html_index_alert.asp')
-
-t=outlookbar.addtitle('生成栏目','静态管理',1)
-outlookbar.additem('生成栏目',t,'html_items.asp')
-
-t=outlookbar.addtitle('生成内容','静态管理',1)
-outlookbar.additem('生成内容',t,'html_article.asp')
 
 

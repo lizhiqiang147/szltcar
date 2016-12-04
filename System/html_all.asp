@@ -22,13 +22,7 @@ Call header()
 '生成首页
 call index_to_html()
 
-'生成栏目
-sql="select [id],ppid,ClassType,Html_Yes,index_push from [category]  order by [time] desc"
-set rs_create=server.createobject("adodb.recordset")
-rs_create.open(sql),cn,1,1
-if not rs_create.eof then
-do while not rs_create.eof
-ClassID=rs_create("id")
+
 
 '文章
 if rs_create("ClassType")=1 then
