@@ -190,6 +190,35 @@ rs.close
 
 replace_code=replace(replace_code,"$web_TopIMGAD$",web_TopIMGAD)
 
+'读取价格列表
+sql="select top 1 * from [web_info] where cid='344' and view_yes=1 order by [time] desc"
+rs.open(sql),cn,1,1
+if not rs.eof then
+	rscount=rs.recordcount
+    whichpage=j 
+    rs.pagesize=666
+    totalpage=rs.pagecount
+    rs.absolutepage=whichpage
+    howmanyrecs=0
+    list_block=""
+    list_block=list_block&"<ul>"
+    do while not rs.eof and howmanyrecs<rs.pagesize
+
+        list_block=list_block&"<table width='100%' border='0' cellpadding='0' cellspacing='0' >"
+        list_block=list_block&"<td colspan='2' align='left' class='Rtitle'><strong>&nbsp;"&rs("title")&"</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span>["&rs("time")&"]</span></td></tr>"
+
+        list_block=list_block&"<td align='left' bgcolor='#FCFCFC'><p>"&rs("content")&"</p></td></tr>"
+        list_block=list_block&"</table><br>"
+        rs.movenext
+        howmanyrecs=howmanyrecs+1
+    loop
+    list_block=list_block&"</ul>"
+else
+	list_block=list_block&"暂无信息！"
+end if
+rs.close
+
+replace_code=replace(replace_code,"$webNewestPrice$",list_block)
 
 '企业介绍
 sql="select top 1  [name],[folder],[id],[pid],[ppid],[image],[content] from [category] where ClassType=5 and ppid=1 order by [order]"
